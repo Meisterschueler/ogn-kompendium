@@ -1,0 +1,12 @@
+before_install:
+- sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng
+script:
+- pdflatex main.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: lymi+ij2eN8uuNDgh39Vgzh/gC1AIPttUuhtMoFNZ6haX7RlHO8iw4tT4/1837X3Z82RPrttbqRkIW1tLJXOfNeKDtSIYXsj041w6pgfYsGAtc8k17gWXXnyr+y6j6eUpdjfT6y72GgoO+Dq+saH5y4zcNAS1n8EcO83JwWpb8NyZbyb/KC3CPQHZKMkl8aXaYjx6RazP2BX8lkYNDA/iATZwplDtth2lyrGmLuk7ZxN5u71cd96jvzmqcjXVDkIq/7mkM8H1hujzvAbX+byssMyKzpoYyD0u3fqzk/GFtw2CD0wPz7FDCbhHw6mXQSVCh4ztLQIBfbzzuqoyG8iCFlVNDbqB3BeaLCXJmnGs/dEBNDEc0n6BIaaxusT02UEbpBFaHHKNFugwrU6oj1GMobrJHO9oElkF1ySJbI4Pteu2nZIhULc8R75l2XX0WLKqLtDctcXYGVadFBep9QyKyR1NNcOYbptFeGDp6Xk5P40e/LZEkKWR8/zpYJ/uGlXAvVE75F6qojEnXPecmO9hUruZlkYUWFZnzs9pnPLSYelMG3PTDeLp4pC4b1ZFLwsmTB5IGa4jtKymjlKobVEvkh0WrD988iSK68hme2zeuTdskCpzPv2tSXAsMZTBSvxK5CdvpwJ7+rCXf3I6WpJ5YyVGM22PFqPh3yugfSDVbc=
+  file: main.pdf
+  on:
+    repo: Meisterschueler/ogn-kompendium
